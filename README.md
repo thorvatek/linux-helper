@@ -17,3 +17,6 @@ Fedora Linux Helper Tool that automates the setup and configuration of an fedora
 4. Follow the prompts to select the packages you want to install.
 5. The script will handle the rest of the setup process.
 6. After the setup is complete, you can reboot your system to see the changes.
+
+---
+Inspired by [Crucible](https://github.com/typecraft-dev/crucible/), my goal isn’t to create a clone but to build something similar on my own and learn throughout the process.

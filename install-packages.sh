@@ -37,5 +37,5 @@ packages=(
 )
 
 for package in ${packages[@]}; do
-	flatpak install --user --assumeyes ${package}
+	flatpak install --assumeyes ${package}
 done

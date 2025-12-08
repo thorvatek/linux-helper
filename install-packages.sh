@@ -50,14 +50,15 @@ fi
 
 # Before everything, we have to make make sure that system fully updates
 log_message "INFO: Running system DNF update..."
-sudo dnf update --assumeyes
+sudo dnf upgrade --refresh -y
 # Since set -e is active, we don't need 'if [ $? -ne 0 ]', it handles the failure.
 log_message "INFO: DNF update complete."
 log_message "INFO: Running FLATPAK update..."
-flatpak update -y
+flatpak update --assumeyes
 log_message "INFO: FLATPAK update complete."
 
-
+# DNF PACKAGE INSTALLATION
+log_message "TASK: Starting FLATPAK package installation."
 # List of FLATPAK packages to install
 packages=(
 	com.mattjakeman.ExtensionManager
@@ -80,3 +81,54 @@ for package in "${packages[@]}"; do
         log_message "SUCCESS: $package installed."
     fi
 done
+
+log_message "INFO: FLATPAK package installation complete."
+
+
+# DNF PACKAGE INSTALLATION
+log_message "TASK: Starting DNF package installation."
+
+dnf_packages=(
+    # General utilities
+    "yaru-sound-theme"
+	"mc"
+    "htop"
+    "alacritty"
+    "fastfetch"
+	"gnome-tweaks"
+	"gnome-firmware"
+	"steam"
+    
+    # Development tools
+    "sublime-text"
+	# "gcc"
+	# "make"
+        
+    # Add any other package names here (e.g., 'vlc', 'gimp', etc.)
+)
+
+# Loop through DNF packages
+for package in "${dnf_packages[@]}"; do
+    log_message "INFO: Installing DNF package: $package..."
+    
+    # Run the install command without 'sudo' as the script is running as root
+    # Note: Using '-y' is equivalent to '--assumeyes'
+    dnf install -y "$package"
+    
+    # Manually check exit status to log and continue if one package fails
+    if [ $? -ne 0 ]; then
+        log_message "WARNING: Failed to install DNF package $package. Continuing to the next package."
+        # Temporarily disable set -e to allow continuation
+        set +e
+    else
+        log_message "SUCCESS: $package installed."
+    fi
+done
+
+# Re-enable set -e after the loop to maintain strict error checking
+set -e
+
+log_message "INFO: DNF package installation complete."
+
+# The script should then end with:
+log_message "INFO: All tasks complete. Script finished successfully."

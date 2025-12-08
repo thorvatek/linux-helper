@@ -1,6 +1,6 @@
 # Thor's linux-helper 🛠️
 
-Fedora Linux Helper Tool that automates the setup and configuration of an fedora Linux system. It installs and configures packages, and various utilities to create a fully functional gaming and production environment.
+Fedora Linux Helper Tool that automates the setup and configuration of an Fedora Linux system. It installs and configures packages, and various utilities to create a fully functional gaming and production environment.
 
 ## Prerequisites
 - A fresh Fedora Linux installation

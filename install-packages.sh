@@ -57,7 +57,7 @@ log_message "INFO: Running FLATPAK update..."
 flatpak update --assumeyes
 log_message "INFO: FLATPAK update complete."
 
-# DNF PACKAGE INSTALLATION
+# FLATPAK PACKAGE INSTALLATION
 log_message "TASK: Starting FLATPAK package installation."
 # List of FLATPAK packages to install
 packages=(
@@ -72,7 +72,7 @@ for package in "${packages[@]}"; do
     log_message "INFO: Attempting to install Flatpak package: $package"
     
     # Run command and check exit status manually for better logging
-    flatpak install --assumeyes "$package"
+    flatpak install -y "$package"
     
     if [ $? -ne 0 ]; then
         log_message "WARNING: Installation of $package failed. Continuing with next package..."
@@ -87,7 +87,7 @@ log_message "INFO: FLATPAK package installation complete."
 
 # DNF PACKAGE INSTALLATION
 log_message "TASK: Starting DNF package installation."
-
+# List of DNF packages to install
 dnf_packages=(
     # General utilities
     "yaru-sound-theme"
@@ -107,25 +107,21 @@ dnf_packages=(
     # Add any other package names here (e.g., 'vlc', 'gimp', etc.)
 )
 
+# Temporarily disable 'set -e' for the entire DNF package installation block
+set +e
 # Loop through DNF packages
 for package in "${dnf_packages[@]}"; do
-    log_message "INFO: Installing DNF package: $package..."
-    
-    # Run the install command without 'sudo' as the script is running as root
-    # Note: Using '-y' is equivalent to '--assumeyes'
+    # ... your logging and installation code here ...
     dnf install -y "$package"
     
-    # Manually check exit status to log and continue if one package fails
     if [ $? -ne 0 ]; then
-        log_message "WARNING: Failed to install DNF package $package. Continuing to the next package."
-        # Temporarily disable set -e to allow continuation
-        set +e
+        log_message "WARNING: Failed to install DNF package $package. Continuing..."
     else
         log_message "SUCCESS: $package installed."
     fi
 done
 
-# Re-enable set -e after the loop to maintain strict error checking
+# Re-enable set -e after the entire loop block
 set -e
 
 log_message "INFO: DNF package installation complete."

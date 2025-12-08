@@ -19,12 +19,17 @@ handle_error() {
 # Exit on any error
 set -e
 
+# Define a logging function
+log_message() {
+    echo "[$(date +'%Y-%m-%d %H:%M:%S')] $1" | tee -a "$LOG_FILE"
+}
+
 # Print the logo
 print_logo() {
 	cat << "EOF"
 
 ▖ ▘        ▌   ▜       
-▌ ▌▛▌▌▌▚▘  ▛▌█▌▐ ▛▌█▌▛▘ Linux System Post Install Tool
+▌ ▌▛▌▌▌▚▘  ▛▌█▌▐ ▛▌█▌▛▘ Linux System Post Install Script
 ▙▖▌▌▌▙▌▞▖  ▌▌▙▖▐▖▙▌▙▖▌  by: Thor 
                  ▌      Version: 0.01 (Dec 7, 2025)
 
@@ -34,17 +39,26 @@ EOF
 # Clear screen and show logo
 clear
 print_logo
+log_message "INFO: Starting Linux System Post Install Script"
 
 if [ $EUID -ne 0 ]; then
-  echo "This script requires elevated privileges. Run with: sudo $0" 1>&2
+	# ... use log_message for consistent output
+	log_message "ERROR: This script requires elevated privileges. Exiting."
+    # echo "This script requires elevated privileges. Run with: sudo $0" 1>&2
   exit 1
 fi
 
 # Before everything, we have to make make sure that system fully updates
+log_message "INFO: Running system DNF update..."
 sudo dnf update --assumeyes
+# Since set -e is active, we don't need 'if [ $? -ne 0 ]', it handles the failure.
+log_message "INFO: DNF update complete."
+log_message "INFO: Running FLATPAK update..."
 flatpak update -y
+log_message "INFO: FLATPAK update complete."
 
-# List Flatpak packages to install
+
+# List of FLATPAK packages to install
 packages=(
 	com.mattjakeman.ExtensionManager
 	io.github.kolunmi.Bazaar
@@ -52,6 +66,17 @@ packages=(
 	org.gnome.FontManager
 )
 
-for package in ${packages[@]}; do
-	flatpak install --assumeyes ${package}
+# Use a for loop that checks the exit code of each flatpak install
+for package in "${packages[@]}"; do
+    log_message "INFO: Attempting to install Flatpak package: $package"
+    
+    # Run command and check exit status manually for better logging
+    flatpak install --assumeyes "$package"
+    
+    if [ $? -ne 0 ]; then
+        log_message "WARNING: Installation of $package failed. Continuing with next package..."
+        # We use 'continue' instead of 'exit 1' to ensure the other packages can install
+    else
+        log_message "SUCCESS: $package installed."
+    fi
 done

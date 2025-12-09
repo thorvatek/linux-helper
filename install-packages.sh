@@ -31,7 +31,7 @@ print_logo() {
 ▖ ▘        ▌   ▜       
 ▌ ▌▛▌▌▌▚▘  ▛▌█▌▐ ▛▌█▌▛▘ Linux System Post Install Script
 ▙▖▌▌▌▙▌▞▖  ▌▌▙▖▐▖▙▌▙▖▌  by: Thor 
-                 ▌      Version: 0.01 (Dec 7, 2025)
+                 ▌      Version: 1.00 (Dec 7, 2025)
 
 EOF
 }

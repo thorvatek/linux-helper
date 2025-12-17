@@ -7,11 +7,11 @@ Simplify package installation, system configuration, and utility setup with a si
 
 ## 🌟 Features  
 
-- **One-Click Setup**: Install essential packages, development tools, and gaming utilities.  
-- **Gaming Ready**: Preconfigure Steam, Proton, Lutris, and WINE for Linux gaming.  
-- **Production Environment**: Set up development tools (e.g., Docker, Python, Node.js) and IDE integrations.  
-- **System Tweaks**: Apply performance optimizations, theme adjustments, and kernel tweaks.  
-- **Safety First**: Runs with `sudo` but avoids irreversible system changes unless explicitly confirmed.  
+- **One-Click Setup**: Install essential packages, development tools, and gaming utilities.
+- **Gaming Ready**: Preconfigure Steam, Proton, Lutris, and WINE for Linux gaming.
+- **Production Environment**: Set up development tools (e.g., Docker, Python, Node.js) and IDE integrations.
+- **System Tweaks**: Apply performance optimizations, theme adjustments, and kernel tweaks.
+- **Safety First**: Runs with `sudo` but avoids irreversible system changes unless explicitly confirmed.
 
 ---
 

@@ -65,6 +65,7 @@ packages=(
 	io.github.kolunmi.Bazaar
 	io.missioncenter.MissionCenter
 	org.gnome.FontManager
+	com.visualstudio.code
 )
 
 # Use a for loop that checks the exit code of each flatpak install

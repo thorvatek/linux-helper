@@ -41,7 +41,7 @@ Simplify package installation, system configuration, and utility setup with a si
 
 ---
 
-## �🔧 Prerequisites
+## 🔧 Prerequisites
 
 ✅ **Fresh Fedora Linux installation** (tested on Fedora 38+).
 ✅ **Active internet connection** (for package downloads).
@@ -114,4 +114,4 @@ sudo reboot
 
 --- 
 
-*Version 1.00 — Built with ❤️ for Fedora users.*
+*Built with ❤️ for Fedora users.*

@@ -1,6 +1,6 @@
 # Thor's Linux Helper 🛠️  
 
-**A Fedora-focused automation tool for streamlined system setup, gaming, and production environments.**  
+**A Fedora-focused automation tool for streamlined system setup.**  
 Simplify package installation, system configuration, and utility setup with a single script.  
 
 ---
@@ -8,20 +8,46 @@ Simplify package installation, system configuration, and utility setup with a si
 ## 🌟 Features  
 
 - **One-Click Setup**: Install essential packages, development tools, and gaming utilities.
-- **Gaming Ready**: Preconfigure Steam, Proton, Lutris, and WINE for Linux gaming.
-- **Production Environment**: Set up development tools (e.g., Docker, Python, Node.js) and IDE integrations.
-- **System Tweaks**: Apply performance optimizations, theme adjustments, and kernel tweaks.
-- **Safety First**: Runs with `sudo` but avoids irreversible system changes unless explicitly confirmed.
+- **Gaming Ready**: Install Steam, Lutris, and Heroic for comprehensive Linux gaming support.
+- **Production Environment**: Set up development tools (Visual Studio Code, make, gcc).
+- **System Tweaks**: Install GNOME Tweaks, Extension Manager, and system utilities.
+- **System Updates**: Automatic DNF and Flatpak updates before package installation.
+- **Safety First**: Error handling with detailed logging of all operations.
 
 ---
 
-## 🔧 Prerequisites  
+## � What Gets Installed
 
-✅ **Fresh Fedora Linux installation** (tested on Fedora 38+).  
-✅ **Active internet connection** (for package downloads).  
-✅ **Root privileges** (`sudo` access).  
+### Flatpak Packages
+- Extension Manager
+- Bazaar
+- Mission Center
+- Font Manager
+- Visual Studio Code
+- Lutris (gaming platform)
+- Heroic Games Launcher
 
-> **Note**: Designed for **fresh installs** to avoid conflicts with existing configurations.  
+### DNF Packages
+- yaru-sound-theme
+- mc (Midnight Commander)
+- htop
+- alacritty
+- fastfetch
+- gnome-tweaks
+- gnome-firmware
+- steam
+- gcc
+- make
+
+---
+
+## �🔧 Prerequisites
+
+✅ **Fresh Fedora Linux installation** (tested on Fedora 38+).
+✅ **Active internet connection** (for package downloads).
+✅ **Root privileges** (`sudo` access).
+
+> **Note**: Designed for **fresh installs** but can be used on existing ones too.
 
 ---
 
@@ -88,4 +114,4 @@ sudo reboot
 
 --- 
 
-*Version 1.0 — Built with ❤️ for Fedora users.*
+*Version 1.00 — Built with ❤️ for Fedora users.*

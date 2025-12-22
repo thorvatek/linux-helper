@@ -32,9 +32,9 @@ Simplify package installation, system configuration, and utility setup with a si
 
 ## 🔧 Prerequisites
 
-✅ **Fresh Fedora Linux installation** (tested on Fedora 38+),
-✅ **Active internet connection** (for package downloads), 
-✅ **Root privileges** (`sudo` access).
+* **Fresh Fedora Linux installation** (tested on Fedora 38+),
+* **Active internet connection** (for package downloads), 
+* **Root privileges** (`sudo` access).
 
 > **Note**: Designed for **fresh installs** but can be used on existing ones too.
 

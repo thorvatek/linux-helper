@@ -1,4 +1,4 @@
-# Thor's Linux Helper 🛠️  
+# Linux Helper 🛠️  
 
 **A Fedora-focused automation tool for streamlined system setup.**  
 Simplify package installation, system configuration, and utility setup with a single script.  

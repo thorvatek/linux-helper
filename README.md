@@ -5,17 +5,6 @@ Simplify package installation, system configuration, and utility setup with a si
 
 ---
 
-## 🌟 Features  
-
-- **One-Click Setup**: Install essential packages, development tools, and gaming utilities.
-- **Gaming Ready**: Install Steam, Lutris, and Heroic for comprehensive Linux gaming support.
-- **Production Environment**: Set up development tools (Visual Studio Code, make, gcc).
-- **System Tweaks**: Install GNOME Tweaks, Extension Manager, and system utilities.
-- **System Updates**: Automatic DNF and Flatpak updates before package installation.
-- **Safety First**: Error handling with detailed logging of all operations.
-
----
-
 ## � What Gets Installed
 
 ### Flatpak Packages
@@ -76,18 +65,6 @@ Simplify package installation, system configuration, and utility setup with a si
 
 ---
 
-## 🤝 Contributing  
-
-Contributions are welcome! 🎯  
-
-1. Fork the repository.  
-2. Create a feature branch (`git checkout -b feature/awesome-feature`).  
-3. Submit a pull request with clear documentation.  
-
-**Bug reports and feature requests**: Open an issue [here](https://github.com/thorvatek/linux-helper/issues).  
-
----
-
 ## 📜 License  
 
 This project is licensed under **MIT** — see the `LICENSE` file for details.  
@@ -100,18 +77,7 @@ Inspired by **[Crucible](https://github.com/typecraft-dev/crucible/)**, this pro
 
 ---
 
-### ✅ Quick Start Summary  
-
-```bash  
-git clone https://github.com/thorvatek/linux-helper.git  
-cd linux-helper  
-chmod +x install-packages.sh  
-sudo ./install-packages.sh  
-sudo reboot  
-```  
-
 **Your Fedora workstation, simplified.** 🖥️🎮💻  
 
---- 
-
+---
 *Built with ❤️ for Fedora users.*

@@ -74,10 +74,3 @@ This project is licensed under **MIT** — see the `LICENSE` file for details.
 ## 💡 Inspiration  
 
 Inspired by **[Crucible](https://github.com/typecraft-dev/crucible/)**, this project was built independently to deepen my understanding of Linux system automation. All credit for the original idea goes to the Crucible authors.  
-
----
-
-**Your Fedora workstation, simplified.** 🖥️🎮💻  
-
----
-*Built with ❤️ for Fedora users.*

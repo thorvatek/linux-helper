@@ -1,7 +1,7 @@
 # Linux Helper 🛠️  
 
 **A Fedora-focused automation tool for streamlined system setup.**  
-Simplify package installation, system configuration, and utility setup with a single script.  
+Simplify package installation, and utility setup with a single script.  
 
 ---
 
@@ -17,14 +17,14 @@ Simplify package installation, system configuration, and utility setup with a si
 - Heroic Games Launcher
 
 ### DNF Packages
-- yaru-sound-theme
+- Yaru Sound Theme
 - mc (Midnight Commander)
 - htop
-- alacritty
-- fastfetch
-- gnome-tweaks
-- gnome-firmware
-- steam
+- Alacritty
+- FastFetch
+- Gnome-Tweaks
+- Gnome-Firmware
+- Steam
 - gcc
 - make
 

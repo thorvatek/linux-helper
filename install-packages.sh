@@ -32,8 +32,8 @@ print_logo() {
 
 ▖ ▘        ▌   ▜       
 ▌ ▌▛▌▌▌▚▘  ▛▌█▌▐ ▛▌█▌▛▘ Linux System Post Install Script
-▙▖▌▌▌▙▌▞▖  ▌▌▙▖▐▖▙▌▙▖▌  by: Thor 
-                 ▌      Version: 1.02 (Dec 18, 2025)
+▙▖▌▌▌▙▌▞▖  ▌▌▙▖▐▖▙▌▙▖▌  by: Thor
+                 ▌      Version: 1.03 (Dec 29, 2025)
 
 EOF
 }
@@ -44,7 +44,6 @@ print_logo
 log_message "INFO: Starting Linux System Post Install Script"
 
 if [ $EUID -ne 0 ]; then
-    # ... use log_message for consistent output
     log_message "ERROR: This script requires elevated privileges. Exiting."
     exit 1
 fi
@@ -52,7 +51,6 @@ fi
 # Before everything, we have to make sure that system fully updates
 log_message "INFO: Running system DNF update..."
 dnf upgrade --refresh -y
-# Since set -e is active, we don't need 'if [ $? -ne 0 ]', it handles the failure.
 log_message "INFO: DNF update complete."
 log_message "INFO: Running FLATPAK update..."
 flatpak update --assumeyes
@@ -65,12 +63,15 @@ log_message "TASK: Starting FLATPAK package installation."
 # List of FLATPAK packages to install
 packages=(
     com.mattjakeman.ExtensionManager
-    io.github.kolunmi.Bazaar
     io.missioncenter.MissionCenter
     org.gnome.FontManager
+	io.github.kolunmi.Bazaar
+	# Visual Studio Code
     com.visualstudio.code
+	# Needed for Gaming
     net.lutris.Lutris
     com.heroicgameslauncher.hgl
+	# Add whatever you like to be installed
 )
 
 # Use a for loop that checks the exit code of each flatpak install
@@ -105,7 +106,8 @@ dnf_packages=(
     "steam"
     "gcc"
     "make"
-    # Add any other package names here (e.g., 'vlc', 'gimp', etc.)
+	"git"
+	# Add any other package names here (e.g., 'vlc', 'gimp', etc.)
 )
 
 # Loop through DNF packages

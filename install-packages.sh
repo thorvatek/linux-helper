@@ -64,7 +64,6 @@ log_message "TASK: Starting FLATPAK package installation."
 packages=(
     com.mattjakeman.ExtensionManager
     io.missioncenter.MissionCenter
-    org.gnome.FontManager
 	io.github.kolunmi.Bazaar
 	# Visual Studio Code
     com.visualstudio.code

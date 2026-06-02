@@ -96,6 +96,7 @@ log_message "TASK: Starting DNF package installation."
 
 # List of DNF packages to install
 dnf_packages=(
+	"sysstat"
     "yaru-sound-theme"
     "mc"
     "htop"
